@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var LikeButton=React.createClass({
+        getInitialState(){
+          return {
+              like:true
+          }
+        },
+        handerClick(){
+          this.setState({like:!this.state.like})
+        },
+        render(){
+          var text=this.state.like?"like YES":"like NO";
+          return (<div onClick={this.handerClick}>{text}</div>)
+        }
+      })
+
+      ReactDOM.render(
+        <LikeButton />,
+        document.getElementById('example')
+      )
+    </script>
+  </body>
+</html>
+

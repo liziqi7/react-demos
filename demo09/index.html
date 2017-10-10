@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+    var InputComponent=React.createClass({
+      getInitialState(){
+        return{
+          text:'Hello!'
+        }
+      },
+      handerChange(event){
+        this.setState({text:event.target.value})
+      },
+      render(){
+        return (
+            <div>
+              <input type="value" value={this.state.text} onChange={this.handerChange} />
+              <p>{this.state.text}</p>
+            </div>
+          )
+      }
+    });
+    ReactDOM.render(
+      <InputComponent />,
+      document.getElementById('example')
+    )
+    </script>
+  </body>
+</html>
