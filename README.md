@@ -40,8 +40,9 @@ path属性可以使用通配符。
 <Route path="/**/*.jpg">
 // 匹配 /files/hello.jpg
 // 匹配 /files/path/to/file.jpg
-``
+```
 通配符的规则如下。
+
 ```
 （1）:paramName
 :paramName匹配URL的一个部分，直到遇到下一个/、?、#为止。这个路径参数可以通过this.props.params.paramName取出。
